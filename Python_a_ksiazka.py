@@ -1,15 +1,10 @@
-miejsca = ['Rosja', 'Chiny', 'USA', 'Norwegia', 'Szkocja']
-print(miejsca)
-print(sorted(miejsca))
-print(miejsca)
-print(sorted(miejsca, reverse=True))
-print(miejsca)
-miejsca.reverse()
-print(miejsca)
-miejsca.reverse()
-print(miejsca)
-miejsca.sort()
-print(miejsca)
-miejsca.sort(reverse=True)
-print(miejsca)
-print(len(miejsca))
+favorite_language = {
+    'janek': 'python',
+    'sara': 'c',
+    'edward': 'ruby',
+    'paweł': 'python',
+}
+
+for name, language in favorite_language:
+    print(f"Ulubiony język programowania użytkownika {name.title()} to "
+          f"{language.title()}.")
