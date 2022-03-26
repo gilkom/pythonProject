@@ -1,10 +1,9 @@
-favorite_language = {
-    'janek': 'python',
-    'sara': 'c',
-    'edward': 'ruby',
-    'paweł': 'python',
+pizza = {
+    'crust': 'grubym',
+    'toppings': ['pieczarki', 'podwójny ser'],
 }
 
-for name, language in favorite_language:
-    print(f"Ulubiony język programowania użytkownika {name.title()} to "
-          f"{language.title()}.")
+print(f"Zamowiles pizze na {pizza['crust']} cieście "
+      f"wraz z następującymi dodatkami:")
+for topping in pizza['toppings']:
+    print(f"\t{topping}")

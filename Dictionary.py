@@ -18,6 +18,7 @@
 # sorted_d = dict(sorted(d.items(), key= operator.itemgetter(1), reverse=True))
 # print(sorted_d)
 
+
 # ------------------------------------------------------------------------
 # !! 2. Write a Python script to add a key to a dictionary.
 # Sample Dictionary : {0: 10, 1: 20}
@@ -99,3 +100,37 @@
 # for x in range(1, 6):
 #     dictionary.update({x : x*x})
 # print(dictionary)
+
+# ------------------------------------------------------------------------
+# 7. Write a Python script to print a dictionary where the keys are numbers
+# between 1 and 15 (both included) and the values are square of keys.
+# Sample Dictionary
+# {1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81, 10: 100,
+# 11: 121, 12: 144, 13: 169, 14: 196, 15: 225}
+
+# dictionary = {}
+#
+# for x in range(1, 16):
+#     dictionary[x] = x*x
+# print(dictionary)
+
+# ------------------------------------------------------------------------
+# ! 8. Write a Python script to merge two Python dictionaries.
+
+# dict1 = {1: 'a', 2: 'b', 3: 'c'}
+# dict2 = {3: 'd', 4: 'e'}
+#
+# d = dict1.copy()
+# d.update(dict2)
+# print(d)
+
+# ------------------------------------------------------------------------
+# 9. Write a Python program to iterate over dictionaries using for loops.
+
+# dict1 = {1: 'a', 2: 'b', 3: 'c'}
+# for d in dict1.items():
+#     print(d)
+# for k, v in dict1.items():
+#     print(f"({k}, '{v}')")
+
+# ------------------------------------------------------------------------
