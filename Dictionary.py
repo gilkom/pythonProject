@@ -134,3 +134,48 @@
 #     print(f"({k}, '{v}')")
 
 # ------------------------------------------------------------------------
+
+# ! 10. Write a Python program to sum all the items in a dictionary.
+#
+# my_dict = {'data1':100,'data2':-54,'data3':247}
+# print(sum(my_dict.values()))
+
+# ------------------------------------------------------------------------
+
+# 11. Write a Python program to multiply all the items in a dictionary.
+#
+# my_dict = {'data1':100,'data2':-54,'data3':247}
+# result = 1
+# for val in my_dict.values():
+#     result = result * val
+# print(result)
+
+# ------------------------------------------------------------------------
+
+# 12. Write a Python program to remove a key from a dictionary.
+#
+# myDict = {'a':1,'b':2,'c':3,'d':4}
+# print(myDict)
+# del myDict['a']
+# if 'f' in myDict:
+#     del myDict['f']
+# print(myDict)
+
+# ------------------------------------------------------------------------
+
+# ! 13. Write a Python program to map two lists into a dictionary.
+
+# keys = ['red', 'green', 'blue']
+# values = ['#FF0000','#008000', '#0000FF']
+#
+# dic = dict(zip(keys, values))
+# print(dic)
+
+# 14. Write a Python program to sort a given dictionary by key.
+
+# color_dict = {'red':'#FF0000',
+#           'green':'#008000',
+#           'black':'#000000',
+#           'white':'#FFFFFF'}
+#
+# print(dict(sorted(color_dict.items())))

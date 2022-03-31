@@ -1,9 +1,13 @@
-pizza = {
-    'crust': 'grubym',
-    'toppings': ['pieczarki', 'podwójny ser'],
-}
+unconfirmed_users = ['alicja', 'bartek', 'katarzyna']
+confirmed_users = []
 
-print(f"Zamowiles pizze na {pizza['crust']} cieście "
-      f"wraz z następującymi dodatkami:")
-for topping in pizza['toppings']:
-    print(f"\t{topping}")
+while unconfirmed_users:
+    current_user = unconfirmed_users.pop()
+
+    print(f"Weryfikacja {current_user.title()}")
+
+    confirmed_users.append(current_user)
+
+print(f"\nZweryfikowan użytkownikow:")
+for confirmed in confirmed_users:
+    print(confirmed.title())
