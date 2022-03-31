@@ -1,13 +1,7 @@
-unconfirmed_users = ['alicja', 'bartek', 'katarzyna']
-confirmed_users = []
-
-while unconfirmed_users:
-    current_user = unconfirmed_users.pop()
-
-    print(f"Weryfikacja {current_user.title()}")
-
-    confirmed_users.append(current_user)
-
-print(f"\nZweryfikowan użytkownikow:")
-for confirmed in confirmed_users:
-    print(confirmed.title())
+tup = (1, 2, "bla", 1)
+tup2 = tuple()
+tup3 = ()
+print(tup)
+print(type(tup))
+print(type(tup2))
+print(type(tup3))
