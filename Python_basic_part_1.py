@@ -154,3 +154,188 @@
 # print (n1+n2+n3)
 
 # ----------------------------------------------------------------------------
+
+# 11. Write a Python program to print the documents (syntax, description etc.)
+# of Python built-in function(s).
+# Sample function : abs()
+# Expected Result :
+# abs(number) -> number
+# Return the absolute value of the argument.
+#
+# print(abs.__doc__)
+# print(all.__doc__)
+
+# ----------------------------------------------------------------------------
+
+# 12. Write a Python program to print the calendar of a given month and year.
+# Note : Use 'calendar' module.
+
+# import calendar
+#
+# y = int(input("Type year: "))
+# m = int(input("Typ month: "))
+#
+# print(calendar.month(y, m))
+# print(calendar.calendar(y))
+
+# ----------------------------------------------------------------------------
+
+# 13. Write a Python program to print the following 'here document'.
+# Sample string :
+# a string that you "don't" have to escape
+# This
+# is a ....... multi-line
+# heredoc string --------> example
+#
+# print("""a string that you "don't" have to escape""")
+# print("This")
+# print("is a ...... multi-line")
+# print("heredoc string ------> example")
+#
+# print("""
+# a string that you "don't" have to escape
+# This
+# is a  ....... multi-line
+# heredoc string --------> example
+# """)
+
+# ----------------------------------------------------------------------------
+
+
+# 14. Write a Python program to calculate number of days between two dates.
+# Sample dates : (2014, 7, 2), (2014, 7, 11)
+# Expected output : 9 days
+# import datetime
+#
+# date1 = datetime.date(2014, 7, 2)
+# date2 = datetime.date(2014, 7, 11)
+# result = date2 - date1
+# print(result.days)
+
+# ----------------------------------------------------------------------------
+
+
+# 15. Write a Python program to get the volume of a sphere with radius 6.
+# import math
+#
+# r = int(input("Type radius"))
+# volume = (4 * math.pi * r**3)/3
+# print(volume)
+
+# ----------------------------------------------------------------------------
+
+# 16. Write a Python program to get the difference between a given number
+# and 17,
+# if the number is greater than 17 return double the absolute difference.
+#
+# x = int(input("Type number: "))
+# if x > 17:
+#     print(abs(17 - x) * 2)
+# else:
+#     print(17 - x)
+
+# ----------------------------------------------------------------------------
+
+# 17. Write a Python program to test whether a number is within 100 of 1000
+# or 2000.
+
+# numb = int(input("Write a number between 100 and 2000:"))
+# if numb < 1000:
+#    print("within 100 - 1000")
+# else:
+#     print("within 1001 - 2000")
+
+#
+# def near_thousand(n):
+#     return ((abs(1000 - n) <= 100) or (abs(2000 - n) <= 100))
+#
+#
+# print(near_thousand(1000))
+# print(near_thousand(900))
+# print(near_thousand(800))
+# print(near_thousand(2200))
+
+# ----------------------------------------------------------------------------
+
+# 18. Write a Python program to calculate the sum of three given numbers,
+# if the values are equal then return three times of their sum.
+#
+# val1 = int(input("val1:"))
+# val2 = int(input("val2:"))
+# val3 = int(input("val3:"))
+#
+# if val1 == val2 and val2 == val3:
+#     print(3*(val1 + val2 + val3))
+# else:
+#     print(val1 + val2 + val3)
+
+
+# def sum_thrice(x, y, z):
+
+#     sum = x + y + z
+
+#     if x == y == z:
+#      sum = sum * 3
+#     return sum
+
+# print(sum_thrice(1, 2, 3))
+# print(sum_thrice(3, 3, 3))
+
+# ----------------------------------------------------------------------------
+
+# 19. Write a Python program to get a new string from a given string where
+# "Is" has been added to the front.
+# If the given string already begins with "Is" then return the string unchanged.
+#
+# text = input("Type new string: ")
+#
+# if text[0] == "I" and text[1] == "s":
+#     print(text)
+# else:
+#     text="Is" + text
+#     print(text)
+
+
+# def new_string(str):
+#   if len(str) >= 2 and str[:2] == "Is":
+#     return str
+#   return "Is" + str
+#
+# print(new_string("Array"))
+# print(new_string("IsEmpty"))
+
+# ----------------------------------------------------------------------------
+
+# 20. Write a Python program to get a string which is n (non-negative integer)
+# copies of a given string.
+#
+# def give_str(sample_string, n):
+#     for i in range(n):
+#         print(sample_string)
+#
+#
+# give_str("Sentence", 5)
+#
+# def larger_string(str, n):
+#     result = ""
+#     for i in range(n):
+#         result = result + str
+#     return result
+#
+# print(larger_string("Sentence", 4))
+
+# ----------------------------------------------------------------------------
+
+# 21. Write a Python program to find whether a given
+# number (accept from the user) is even or odd, print out an appropriate
+# message to the user.
+#
+# def even_or_odd():
+#     given_number = int(input("Write a number: "))
+#     if (given_number % 2) == 0:
+#         print("Given number is even")
+#     else:
+#         print("Giver number is odd")
+#
+#
+# even_or_odd()
