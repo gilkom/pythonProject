@@ -52,3 +52,18 @@
 
 # -----------------------------------------------------------------------
 
+# 5. Write a Python program to add an item in a tuple.
+
+# tup = 1, 2, 3,
+# print(tup)
+# tup = tup + (4,)
+# print(tup)
+# print(type(tup))
+#
+# tup = tup[:2] + (44, 45, 46,) + tup[2:]
+# print(tup)
+#
+# tup = list(tup)
+# tup.append(300)
+# tup = tuple(tup)
+# print(tup)

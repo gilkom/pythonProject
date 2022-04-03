@@ -339,3 +339,476 @@
 #
 #
 # even_or_odd()
+
+# ----------------------------------------------------------------------------
+
+# # 22. Write a Python program to count the number 4 in a given list.
+# my_list = [1, 2, 3, 4 , 3, 4 , 3, 4, 9, 4,7,4,8,2,1,3,4]
+#
+# #  def count(list):
+# #     result = 0
+# #     for x in range(len(list)):
+# #         if list[x] == 4:
+# #             result += 1
+# #     return result
+# #
+# # print(count(my_list))
+#
+# def count(list):
+#     result = 0
+#     for l in list:
+#         if l == 4:
+#             result += 1
+#     return result
+#
+# print(count(my_list))
+#
+# # ----------------------------------------------------------------------------
+#
+# # 23. Write a Python program to get the n (non-negative integer) copies of
+# the first 2 characters of a given string.
+# # Return the n copies of the whole string if the length is less than 2.
+#
+# # def n_copies(strin, n):
+# #     result = ""
+# #     if len(strin) < 2:
+# #         for s in range(n):
+# #             result = result + strin
+# #     else:
+# #         for s in range(n):
+# #             result = result + strin[0] + strin[1]
+# #     return result
+# #
+# #
+# # print(n_copies("something", 5))
+# # print(n_copies("x", 5))
+#
+#
+# def substring_copy(str, n):
+#     flen = 2
+#     if flen > len(str):
+#         flen = len(str)
+#     substr = str[:flen]
+#
+#     result = ""
+#     for i in range(n):
+#         result = result + substr
+#     return result
+#
+#
+# print(substring_copy('abcdef', 2))
+# print(substring_copy('p', 3));
+#
+# # ------------------------------------------------------------------------
+#
+# # 24. Write a Python program to test whether a passed letter is a vowel
+# or not.
+#
+# # def vowel(l):
+# #     vowels = "aeiouy"
+# #     if l in vowels:
+# #         return "yes"
+# #     else:
+# #         return "no"
+# #
+# # print(vowel('a'))
+# # print(vowel('z'))
+#
+#
+# def is_vowel(char):
+#     all_vowels = 'aeiou'
+#     return char in all_vowels
+#
+#
+# print(is_vowel('c'))
+# print(is_vowel('e'))
+#
+# ------------------------------------------------------------------------
+#
+# # 25. Write a Python program to check whether a specified value is
+# contained in a group of values.
+# # Test Data :
+# # 3 -> [1, 5, 8, 3] : True
+# # -1 -> [1, 5, 8, 3] : False
+#
+# # def check_if_contains(n, m_list):
+# #     if n in m_list:
+# #         return True
+# #     else:
+# #         return False
+# #
+# # print(check_if_contains(3, [1, 3, 5]))
+# # print(check_if_contains(3, [1, 6, 5]))
+#
+# def is_group_member(group_data, n):
+#     for val in group_data:
+#         if n == val:
+#             return True
+#     return False
+#
+#
+# print(is_group_member([1,5,8,3], 3))
+# print(is_group_member([5, 8, 3], -1))
+#
+# # ------------------------------------------------------------------------
+#
+# # 26. Write a Python program to create a histogram from a given list of
+# integers.
+#
+# # def histogram_from_list(my_list):
+# #     for i in my_list:
+# #         result = ""
+# #         for val in range(i):
+# #             result = result + "*"
+# #         print(result)
+# #
+# #
+# # histogram_from_list([4, 7, 1, 4])
+#
+#
+# def histogram( items ):
+#     for n in items:
+#         output = ''
+#         times = n
+#         while( times > 0 ):
+#             output += '*'
+#             times = times - 1
+#         print(output)
+#
+#
+# histogram([2, 3, 6, 5])
+#
+# ------------------------------------------------------------------------
+#
+# # Write a Python program to concatenate all elements in a list into a string
+# and return it.
+#
+# # my_list = ["pierwszy", "drugi", "trzeci", "czwarty"]
+# #
+# # def concatenate(my_list):
+# #     result = ""
+# #     for i in my_list:
+# #         result = result + i
+# #     return result
+# #
+# # print(concatenate(my_list))
+#
+# def concatenate_list_data(list):
+#     result = ""
+#     for element in list:
+#         result += str(element)
+#     return result
+#
+#
+# print(concatenate_list_data([1, 5, 12, 2]))
+#
+# # ------------------------------------------------------------------------
+#
+# # 28. Write a Python program to print all even numbers from a given numbers
+# list in the
+# # same order and stop the printing if any numbers that come after 237 in the
+# sequence. Go to the editor
+# # Sample numbers list :
+# #
+# # numbers = [
+# 386, 462, 47, 418, 907, 344, 236, 375, 823, 566, 597, 978, 328, 615, 953, 345,
+# 399, 162, 758, 219, 918, 237, 412, 566, 826, 248, 866, 950, 626, 949,
+# 687, 217,
+# 815, 67, 104, 58, 512, 24, 892, 894, 767, 553, 81, 379, 843, 831, 445,
+# 742, 717,
+# 958,743, 527
+# #     ]
+# numbers = [
+#      386, 462, 47, 418, 907, 344, 236, 375, 823, 566, 597, 978, 328, 615,
+#      953, 345,
+#      399, 162, 758, 219, 918, 237, 412, 566, 826, 248, 866, 950, 626, 949,
+#      687, 217,
+#      815, 67, 104, 58, 512, 24, 892, 894, 767, 553, 81, 379, 843, 831,
+#      445, 742, 717,
+#      958,743, 527
+#      ]
+#
+# def print_even_numbers(list):
+#     for i in list:
+#         if i == 237:
+#             print(i)
+#             break
+#         elif (i % 2) == 0:
+#             print(i, end=', ')
+#
+# print_even_numbers(numbers)
+#
+# # ------------------------------------------------------------------------
+#
+# # 29. Write a Python program to print out a set containing
+# # all the colors from color_list_1 which are not present in color_list_2.
+# # Test Data :
+# # color_list_1 = set(["White", "Black", "Red"])
+# # color_list_2 = set(["Red", "Green"])
+# # Expected Output :
+# # {'Black', 'White'}
+# # color_list_1 = set(["White", "Black", "Red"])
+# # color_list_2 = set(["Red", "Green"])
+# #
+# # def print_colors(list1, list2):
+# #     for i in list1:
+# #         if i not in list2:
+# #             print(i, end=" ")
+# #     print("")
+# #
+# #
+# # print_colors(color_list_1, color_list_2)
+#
+# color_list_1 = set(["White", "Black", "Red"])
+# color_list_2 = set(["Red", "Green"])
+#
+# print(color_list_1.difference(color_list_2))
+#
+# # ------------------------------------------------------------------------
+#
+# # 30. Write a Python program that will accept the base and height of a
+# triangle and compute the area.
+#
+# def calculate_triangle_area(base, heigth):
+#     return (base * heigth)/2
+#
+#
+# print(calculate_triangle_area(5, 20))
+#
+# ------------------------------------------------------------------------
+#
+# # 31. Write a Python program to compute the greatest common divisor (GCD)
+# of two positive integers.
+#
+#
+# # def gcd(num1, num2):
+# #     while num2 != 0:
+# #         res = num2
+# #         num2 = num1 % num2
+# #         num1 = res
+# #     return num1
+#
+#
+# def gcd(x ,y):
+#     gcd = 1
+#     if x % y == 0:
+#         return y
+#     for k in range(int(y / 2), 0, -1):
+#         if x % k == 0 and y % k == 0:
+#             gcd = k
+#             break
+#     return gcd
+#
+#
+# print("GCD of 12 & 17 =",gcd(12, 17))
+# print("GCD of 4 & 6 =",gcd(4, 6))
+# print("GCD of 336 & 360 =",gcd(336, 360))
+#
+# ------------------------------------------------------------------------
+
+# 32. Write a Python program to get the least common multiple (LCM) of two
+# positive integers.
+#
+# def lcm(x, y):
+#     if x < y:
+#         lcm = y
+#     else:
+#         lcm = x
+#     while ((lcm % x) != 0 or ( lcm % y ) != 0):
+#         lcm +=1
+#     return lcm
+#
+# # def lcm(x, y):
+# #   if x > y:
+# #       z = x
+# #   else:
+# #       z = y
+# #   while(True):
+# #       if((z % x == 0) and (z % y == 0)):
+# #           lcm = z
+# #           break
+# #       z += 1
+# #   return lcm
+#
+#
+#
+#
+# print(lcm(2, 3))
+# print(lcm(5, 10))
+# print(lcm(6, 8))
+# print(lcm(4, 6))
+# print(lcm(15, 17))
+#
+# # ----------------------------------------------------------------------------
+#
+# # 33. Write a Python program to sum of three given integers. However, if
+# two values are equal sum will be zero.
+#
+# def three_sum(x, y, z):
+#     if(x == y or x == z or y == z):
+#         return 0
+#     return x + y + z
+#
+#
+# print(three_sum(1, 2, 3))
+# print(three_sum(1, 3, 3))
+# print(three_sum(2, 1, 2))
+# print(three_sum(3, 2, 2))
+# print(three_sum(2, 2, 2))
+# print(three_sum(1, 2, 3))
+#
+# # ------------------------------------------------------------------------
+#
+# # 34. Write a Python program to sum of two given integers. However,
+# if the sum is between 15 to 20 it will return 20.
+#
+# def two_sum(x, y):
+#     sum = x + y
+#     if sum in range(15, 20):
+#         return 20
+#     return sum
+#
+#
+# print(two_sum(5,14))
+# print(two_sum(1,10))
+# print(two_sum(10, 6))
+# print(two_sum(10, 2))
+# print(two_sum(10, 12))
+#
+# # ------------------------------------------------------------------------
+#
+# # 35. Write a Python program that will return true if the two given
+# integer values are equal
+# # or their sum or difference is 5.
+#
+# def fun_five(x, y):
+#     if(x == 5 or y == 5 or x + y == 5 or x - y == 5 or y - x == 5):
+#         return True
+#     return False
+#
+#
+# print(fun_five(3,2))
+# print(fun_five(3,5))
+# print(fun_five(6,1))
+# print(fun_five(1,2))
+# print(fun_five(7, 2))
+# print(fun_five(3, 2))
+# print(fun_five(2, 2))
+# print(fun_five(7, 3))
+# print(fun_five(27, 53))
+#
+#
+# # # ------------------------------------------------------------------------
+#
+# # 36. Write a Python program to add two objects if both objects are an
+# integer type.
+#
+# def if_integer_add(x, y):
+#     if(isinstance(x, int) and isinstance(y, int)):
+#         return x + y
+#     else:
+#         return "not integer"
+#
+#
+# print(if_integer_add(13, 2))
+# print(if_integer_add(10, 20))
+# print(if_integer_add(10, 20.23))
+# print(if_integer_add('5', 6))
+# print(if_integer_add('5', '6'))
+#
+# # # ------------------------------------------------------------------------
+#
+# # # 37. Write a Python program to display your details like name, age,
+# address in three different lines.
+# #
+# # def display_details(name, age, address):
+# #     print(name)
+# #     print(age)
+# #     print(address)
+# #
+# #
+# # display_details("Marcin", 33, "Pileckiego")
+# #
+# #
+#
+# def personal_details():
+#     name, age = "Simon", 19
+#     address = "Bangalore, Karnataka"
+#     print("Name: {}\nAge: {}\nAddress: {}".format(name, age, address))
+#
+#
+# personal_details()
+#
+# # # ------------------------------------------------------------------------
+#
+# # 38. Write a Python program to solve (x + y) * (x + y). Go to the editor
+# # Test Data : x = 4, y = 3
+# # Expected Output : (4 + 3) ^ 2) = 49
+#
+# def solve(x, y):
+#     #return (x + y) * (x + y)
+#     #return (x + y) ** 2
+#     result = (x + y) ** 2
+#     return ("({} + {}) ^ 2) = {}".format(x, y, result))
+#
+#
+# print(solve(4, 3))
+#
+# # ------------------------------------------------------------------------
+#
+# # 39. Write a Python program to compute the future value of a specified
+# principal
+# # amount, rate of interest, and a number of years. Go to the editor
+# # Test Data : amt = 10000, int = 3.5, years = 7
+# # Expected Output : 12722.79
+#
+# def future_value(amt, rate, years):
+#     result = 10000
+#     for i in range(years):
+#         result = result + (( result  * rate)/100)
+#         print(result)
+#
+#
+#     return round(result,2)
+#
+#
+# print(future_value(10000, 3.5, 7))
+#
+#
+# # amt = 10000
+# # int = 3.5
+# # years = 7
+# # future_value = amt*((1+(0.01*int)) ** years)
+# # print(round(future_value,2))
+#
+# # ------------------------------------------------------------------------
+#
+# # 40. Write a Python program to compute the distance between the
+# points (x1, y1) and (x2, y2).
+# import math
+#
+#
+# def distance(x1, y1, x2, y2):
+#     return math.sqrt(((x2 - x1) ** 2) + ((y2 - y1) ** 2))
+#
+#
+# print(distance(4, 0, 6, 6))
+#
+#
+#
+# # 41. Write a Python program to check whether a file exists
+#
+# import os.path
+# def is_file(name):
+#     if(os.path.isfile(name)):
+#         return 'True'
+#     else:
+#         return 'False'
+#
+#
+# print(is_file('./bla.txt'))
+# print(is_file('./main.py'))
+# print(is_file('./blabla.txt'))
+# print(is_file('./Python_basic_part_1.10.py'))
+# print(is_file('./Python_basic_part_1.43'))
+# # ------------------------------------------------------------------------
