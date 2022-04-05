@@ -227,8 +227,49 @@
 # [1, 2, 4, 8, 9]
 # Intersection of the said arrays: [1, 2, 8, 9]
 
-a = [1, 2, 3, 5, 7, 8, 9, 10]
-b =  [1, 2, 4, 8, 9]
+# a = [1, 2, 3, 5, 7, 8, 9, 10]
+# b =  [1, 2, 4, 8, 9]
+#
+# lam = list(filter(lambda x: x in a, b ))
+# print(lam)
 
-lam = list(filter(lambda x: x in a, b ))
-print(lam)
+# a = [1, 2, 3, 5, 7, 8, 9, 10]
+# b =  [1, 2, 4, 8, 9]
+#
+# intersec = list(set(a) & set(b))
+# print(intersec)
+
+# ---------------------------------------------------------------------------
+# 12. Write a Python program to rearrange positive and negative numbers in a
+# given array using Lambda.
+# Original arrays:
+# [-1, 2, -3, 5, 7, 8, 9, -10]
+# Rearrange positive and negative numbers of the said array:
+# [2, 5, 7, 8, 9, -10, -3, -1]
+
+# array_nums = [-1, 2, -3, 5, 7, 8, 9, -10]
+# print("Original arrays:")
+# print(array_nums)
+# result = sorted(array_nums, key = lambda i: 0 if i == 0 else -1 / i)
+# print("\nRearrange positive and negative numbers of the said array:")
+# print(result)
+
+# ---------------------------------------------------------------------------
+
+# 13. Write a Python program to count the even, odd numbers in a given array
+# of integers using Lambda. Go to the editor
+# Original arrays:
+# [1, 2, 3, 5, 7, 8, 9, 10]
+# Number of even numbers in the above array: 3
+# Number of odd numbers in the above array: 5
+
+# a =  [1, 2, 3, 5, 7, 8, 9, 10]
+#
+# even = len(list(filter(lambda x : x % 2 == 0, a)))
+# print(even)
+#
+# odd = len(list(filter(lambda x : x % 2 != 0, a)))
+# print(odd)
+
+# --------------------------------------------------------------------------
+
