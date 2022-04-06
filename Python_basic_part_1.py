@@ -812,3 +812,386 @@
 # print(is_file('./Python_basic_part_1.10.py'))
 # print(is_file('./Python_basic_part_1.43'))
 # # ------------------------------------------------------------------------
+
+# # 42. Write a Python program to determine if a Python shell is executing in
+# # 32bit or 64bit mode on OS.
+# #
+# # import struct
+# # print(struct.calcsize("P") * 8)
+#
+# import platform, struct
+# print(platform.architecture()[0])
+# print(struct.calcsize("P") * 8)
+#
+#
+# # 43. Write a Python program to get OS name, platform and release information.
+#
+# import platform
+# import os
+# import sys
+# import sysconfig
+#
+# print(os.name)
+# print(platform.system())
+# print(platform.release())
+#
+# print("os.name                     ", os.name)
+# print("sys.platform                ", sys.platform)
+# print("platform.system()           ", platform.system())
+# print("sysconfig.get_platform()    ", sysconfig.get_platform())
+# print("platform.machine()          ", platform.machine())
+# print("platform.architecture()     ", platform.architecture())
+#
+# # ------------------------------------------------------------------------
+#
+# # 44. Write a Python program to locate Python site-packages.
+#
+# import site
+#
+# print(site.getsitepackages())
+# print(site.getusersitepackages())
+#
+# # ------------------------------------------------------------------------
+# # 45. Write a python program to call an external command in Python.
+#
+# from subprocess import call
+#
+# call(["ls", "-l"])
+#
+#
+# # ------------------------------------------------------------------------
+# # 46. Write a python program to get the path and name of the file that is
+# currently executing.
+#
+# import os
+#
+# print("Current File Name: ",  os.path.realpath(__file__))
+#
+# # ------------------------------------------------------------------------
+# # 47. Write a Python program to find out the number of CPUs using.
+#
+# import multiprocessing
+#
+# print(multiprocessing.cpu_count())
+#
+#
+# # ------------------------------------------------------------------------
+# # 48. Write a Python program to parse a string to Float or Integer.
+#
+# a = "234.333"
+# f = float(a)
+#
+# #najpierw trzeba stringa zaminic na float a dopiero potem na integera
+# i = int(f)
+# print(f)
+# print(i)
+#
+# # ------------------------------------------------------------------------
+# # 49. Write a Python program to list all files in a directory in Python.
+#
+# from os import listdir
+# from os.path import isfile, join
+# # print(os.listdir())
+#
+# files_list = [f for f in listdir('/home/students') if
+# isfile(join('/home/students', f))]
+# print(files_list);
+#
+#
+# # ------------------------------------------------------------------------
+# # 50. Write a Python program to print without newline or space.
+#
+#
+# print("one", end="")
+# print("one", end="")
+# print("one", end="")
+#
+#
+# # for i in range(0, 10):
+# #     print('*', end="")
+# # print("\n")
+#
+# # ------------------------------------------------------------------------
+# # 51. Write a Python program to determine profiling of Python programs.
+# # Note: A profile is a set of statistics that describes how often and for
+# how long various parts of
+# # the program executed. These statistics can be formatted into reports
+# via the pstats module.
+#
+# import cProfile
+#
+#
+# def sum():
+#     print(1+2)
+#     x =int(5 + 32423423)
+#
+#
+# cProfile.run('sum()')
+#
+#
+# # ------------------------------------------------------------------------
+# # # 52. Write a Python program to print to stderr.
+# # from __future__ import print_function
+# # import sys
+# # import os
+# #
+# #
+# # sys.stderr.write("spam\n")
+# #
+# # os.write(2, b"spam\n")
+# #
+# # print("spam", file=sys.stderr)
+#
+# from __future__ import print_function
+# import sys
+#
+# def eprint(*args, **kwargs):
+#     print(*args, file=sys.stderr, **kwargs)
+#
+# eprint("abc", "efg", "xyz", sep="--")
+#
+#
+# # ------------------------------------------------------------------------
+# # 3. Write a python program to access environment variables.
+# import os
+#
+# print(os.environ)
+#
+# print(os.environ['HOME'])
+# print(os.environ['PATH'])
+#
+# # ------------------------------------------------------------------------
+# # 54. Write a Python program to get the current username
+# import getpass
+#
+# print(getpass.getuser())
+#
+# # ------------------------------------------------------------------------
+# # 55. Write a Python to find local IP addresses using Python's stdlib
+#
+# import socket
+#
+# print([l for l in ([ip for ip in
+# socket.gethostbyname_ex(socket.gethostname())[2]
+# if not ip.startswith("127.")][:1], [[(s.connect(('8.8.8.8', 53)),
+# s.getsockname()[0], s.close()) for s in [socket.socket(socket.AF_INET,
+# socket.SOCK_DGRAM)]][0][1]]) if l][0][0])
+#
+#
+# # ------------------------------------------------------------------------
+# # 56. Write a Python program to get height and width of the console window.
+#
+# def terminal_size():
+#     import fcntl, termios, struct
+#     th, tw, hp, wp = struct.unpack('HHHH',
+#         fcntl.ioctl(0, termios.TIOCGWINSZ,
+#         struct.pack('HHHH', 0, 0, 0, 0)))
+#     return tw, th
+#
+#
+# print('Number of columns and Rows: ', terminal_size())
+#
+# # ------------------------------------------------------------------------
+# # 57. Write a Python program to get execution time for a Python method.
+#
+# import time
+#
+# def sum_of_n_numbers(n):
+#     start_time = time.time()
+#     s = 0
+#     for i in range(1, n+1):
+#         s = s + 1
+#     end_time = time.time()
+#     return s, end_time-start_time
+#
+#
+# n = 5
+# print("Time to sum of 1 to ", n, " and required time to calculate is :",
+# sum_of_n_numbers(n))
+# print("Time to sum of 1 to ", 100, " and required time to calculate is :",
+# sum_of_n_numbers(100))
+# print("Time to sum of 1 to ", 10000, " and required time to calculate is :",
+# sum_of_n_numbers(10000))
+# print("Time to sum of 1 to ", 1000000, " and required time to calculate
+# is :", sum_of_n_numbers(1000000))
+# print("Time to sum of 1 to ", 10000000, " and required time to calculate is :"
+# , sum_of_n_numbers(10000000))
+# print("Time to sum of 1 to ", 100000000, " and required time to calculate
+# is :", sum_of_n_numbers(100000000))
+# print("Time to sum of 1 to ", 200000000, " and required time to calculate
+# is :", sum_of_n_numbers(200000000))
+# print("Time to sum of 1 to ", 400000000, " and required time to calculate
+# is :", sum_of_n_numbers(400000000))
+#
+#
+# # ------------------------------------------------------------------------
+# # 58. Write a Python program to sum of the first n positive integers.
+#
+# # def sum_positive(n, *args):
+# #     count = n
+# #     sum = 0
+# #     print(count)
+# #     for arg in args:
+# #         if count > 0:
+# #             if arg > 0:
+# #                 sum = sum + arg
+# #                 count -= 1
+# #                 print("sum: ", sum)
+# #                 print("count: ", count)
+# #         else:
+# #             break
+# #
+# #     return sum
+# #
+# #
+# # print(sum_positive(3,-1,2,3,4,5,-6))
+#
+# n = int(input("Input a number: "))
+# sum_num = (n * (n +1)) /2
+# print("Sum of the first", n, " positive integeres: ", sum_num)
+#
+#
+# # ------------------------------------------------------------------------
+# # 59. Write a Python program to convert height (in feet and inches) to
+# centimeters.
+#
+# # number = float(input("Write number in feet and inches: "))
+# #
+# # result = 0
+# #
+# # rest = number
+# # rest = rest - int(number)
+# # rest = (round(rest *100) * 2.54)
+# #
+# # result = (int(number) * 30.48) + rest
+# #
+# # print(result)
+#
+# print("Input your height: ")
+# h_ft = int(input("Feet: "))
+# h_inch = int(input("Inches: "))
+#
+# h_inch += h_ft * 12
+# h_cm = round(h_inch * 2.54, 1)
+#
+# print("Your height is : %d cm." % h_cm)
+#
+# # ------------------------------------------------------------------------
+# # 60. Write a Python program to calculate the hypotenuse of a right angled
+# triangle.
+# import math
+# a = 3
+# b = 4
+# x = math.sqrt((a**2) + (b**2))
+# print(x)
+#
+# # ------------------------------------------------------------------------
+# # 61. Write a Python program to convert the distance (in feet) to inches,
+# yards, and miles.
+#
+# distance = int(input("Write distanece in feet: "))
+#
+# inches = distance * 12
+# yards = round(distance * 0.33, 2)
+# miles = round(distance * 0.000189393939, 2)
+#
+# print("inches: ", inches)
+# print("yards: ", yards)
+# print("miles: ", miles)
+#
+# # ------------------------------------------------------------------------
+# # 62. Write a Python program to convert all units of time into seconds.
+#
+# days = int(input("Input days: ")) * 3600 * 24
+# hours = int(input("Input hours: ")) * 3600
+# minutes = int(input("Input minutes: ")) * 60
+# seconds = int(input("Input seconds: "))
+#
+# time = days + hours + minutes + seconds
+#
+# print("The  amounts of seconds", time)
+#
+# # ------------------------------------------------------------------------
+# # 63. Write a Python program to get an absolute file path.
+# def absolute_file_path(path_fname):
+#     import os
+#     return os.path.abspath('path_fname')
+#
+#
+# print("Absolute file path: ", absolute_file_path("test.txt"))
+#
+#
+# # ------------------------------------------------------------------------
+# # 64. Write a Python program to get file creation and modification date/times.
+#
+# import os.path, time
+# print("Last modified: %s" % time.ctime(os.path.getmtime("test.txt")))
+# print("Created: %s" % time.ctime(os.path.getctime("test.txt")))
+#
+#
+# # ------------------------------------------------------------------------
+# # 65. Write a Python program to convert seconds to day, hour, minutes and
+# seconds.
+#
+# # seconds = int(input("Write seconds: "))
+# #
+# # minutes = seconds / 60
+# # hours = minutes / 60
+# # days = hours / 24
+# #
+# # print("minutes: ",  minutes)
+# # print("hours: ", hours)
+# # print("days: ", days)
+#
+# time = float(input("Input time in seconds: "))
+# day = time // (24 * 3600)
+# time = time % (24 * 3600)
+# hour = time // 3600
+# time %= 3600
+# minutes = time // 60
+# time %= 60
+# seconds = time
+# print("d:h:m:s-> %d:%d:%d:%d" % (day, hour, minutes, seconds))
+#
+# # ------------------------------------------------------------------------
+# # 66. Write a Python program to calculate body mass index.
+#
+# weight = int(input("Write weight in kg: "))
+# height = int(input("Write heigth in metres:"))
+#
+# bmi = weight / ((height/100)**2)
+# print(bmi)
+#
+#
+# # ------------------------------------------------------------------------
+# # 67. Write a Python program to convert pressure in kilopascals to pounds
+# per square inch,
+# # a millimeter of mercury (mmHg) and atmosphere pressure.
+#
+# kpa = float(input("Input pressure in in kilopascals> "))
+# psi = kpa / 6.89475729
+# mmhg = kpa * 760 / 101.325
+# atm = kpa / 101.325
+# print("The pressure in pounds per square inch: %.2f psi"  % (psi))
+# print("The pressure in millimeter of mercury: %.2f mmHg" % (mmhg))
+# print("Atmosphere pressure: %.2f atm." % (atm))
+#
+#
+# # ------------------------------------------------------------------------
+# # 68. Write a Python program to calculate the sum of the digits in an integer.
+#
+# number = int(input("Write integer: "))
+# numb_str = str(number)
+# length = len(str(number))
+# result = 0
+# for i in numb_str:
+#     result = result + int(i)
+#
+# print(result)
+#
+# # num = int(input("Input a four digit numbers: "))
+# # x  = num //1000
+# # x1 = (num - x*1000)//100
+# # x2 = (num - x*1000 - x1*100)//10
+# # x3 = num - x*1000 - x1*100 - x2*10
+# # print("The sum of digits in the number is", x+x1+x2+x3)

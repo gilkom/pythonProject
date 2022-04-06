@@ -273,3 +273,149 @@
 
 # --------------------------------------------------------------------------
 
+# 14. Write a Python program to find the values of length six in a given list
+# using Lambda.
+# Sample Output:
+# Monday
+# Friday
+# Sunday
+#
+# days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday',
+#         'Sunday']
+#
+# days_six = list(filter(lambda x : len(x) == 6, days))
+# print(days_six)
+#
+# days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday',
+#          'Sunday']
+# day = list(filter(lambda d : d if len(d)== 6 else '', days))
+# print(day)
+
+# --------------------------------------------------------------------------
+
+# 15. Write a Python program to add two given lists using map and lambda.
+# Original list:
+# [1, 2, 3]
+# [4, 5, 6]
+# Result: after adding two list
+# [5, 7, 9]
+
+# a = [1, 2, 3]
+# b = [4, 5, 6]
+#
+# res = list(map(lambda x, y : x + y, a, b))
+# print(res)
+
+# --------------------------------------------------------------------------
+
+# 16. Write a Python program to find the second lowest grade of any student(s)
+# from the given names and grades of each student using lists and lambda.
+# Input number of students, names and grades of each student.
+# Input number of students: 5
+# Name: S ROY
+# Grade: 1
+# Name: B BOSE
+# Grade: 3
+# Name: N KAR
+# Grade: 2
+# Name: C DUTTA
+# Grade: 1
+# Name: G GHOSH
+# Grade: 1
+# Names and Grades of all students:
+# [['S ROY', 1.0], ['B BOSE', 3.0], ['N KAR', 2.0], ['C DUTTA', 1.0],
+# ['G GHOSH', 1.0]]
+# Second lowest grade: 2.0
+# Names:
+# N KAR
+
+# students = []
+# print("Input number of students, names and grades of each student.")
+# n = int(input("Input number of students: "))
+# for item in range(n):
+#     name = input("Name: ")
+#     grade = input("Grade: ")
+#     student = [name, grade]
+#     students.append(student)
+#
+#
+# students_sorted = sorted(students, key = lambda x : int(x[1]))
+#
+# lowest = 0
+# sec_lowest = []
+# print(students_sorted)
+#
+# for i in range(len(students_sorted)):
+#     if students_sorted[i][1] != students_sorted[0][1]:
+#         lowest = students_sorted[i][1]
+#         break
+#
+# sec_lowest = list(filter(lambda x : x if x[1] == lowest else '', students))
+#
+# print(sec_lowest)
+
+# --------------------------------------------------------------------------
+
+# 17. Write a Python program to find numbers divisible by nineteen or
+# thirteen from a list of numbers using Lambda. Go to the editor
+# Orginal list:
+# [19, 65, 57, 39, 152, 639, 121, 44, 90, 190]
+# Numbers of the above list divisible by nineteen or thirteen:
+# [19, 65, 57, 39, 152, 190]
+
+# a = [19, 65, 57, 39, 152, 639, 121, 44, 90, 190]
+# res = list(filter(lambda x : x % 19 == 0 or x % 13 == 0, a))
+# print(res)
+
+# --------------------------------------------------------------------------
+
+# 18. Write a Python program to find palindromes in a given list of strings
+# using Lambda. Go to the editor
+# Orginal list of strings:
+# ['php', 'w3r', 'Python', 'abcd', 'Java', 'aaa']
+# List of palindromes:
+# ['php', 'aaa']
+
+# ------------------------------------------------------------------------
+
+# 19. Write a Python program to find all anagrams of a string in a given list
+# of strings using lambda. Go to the editor
+# Orginal list of strings:
+# ['bcda', 'abce', 'cbda', 'cbea', 'adcb']
+# Anagrams of 'abcd' in the above string:
+# ['bcda', 'cbda', 'adcb']
+
+# from collections import Counter
+#
+# a =  ['bcda', 'abce', 'cbda', 'cbea', 'adcb']
+# str1 = 'abcd'
+# result = list(filter(lambda x : Counter(x) == Counter(str1), a))
+# print(result)
+
+# ------------------------------------------------------------------------
+
+# 20. Write a Python program to find the numbers of a given string and
+# store them in a list, display the numbers which are bigger than the length
+# of the list in sorted form. Use lambda function to solve the problem.
+# Original string: sdf 23 safs8 5 sdfsd8 sdfs 56 21sfs 20 5
+# Numbers in sorted form:
+# 20 23 56
+
+# str1 = "sdf 23 safs8 5 sdfsd8 sdfs 56 21sfs 20 5"
+# print(str1)
+# splited = str1.split()
+# print(splited)
+# numbers = sorted([int(number) for number in splited if number.isdecimal()])
+# print(numbers)
+# length = len(numbers)
+# result = list(filter(lambda x : x > length, numbers))
+# print(result)
+
+# ------------------------------------------------------------------------
+
+# 21. Write a Python program that multiply each number of given list with a
+# given number using lambda function. Print the result.
+# Original list: [2, 4, 6, 9, 11]
+# Given number: 2
+# Result:
+# 4 8 12 18 22
