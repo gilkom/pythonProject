@@ -419,3 +419,54 @@
 # Given number: 2
 # Result:
 # 4 8 12 18 22
+#
+# a = [2, 4, 6, 9, 11]
+# numb = 2
+# result = list(map(lambda x : x * numb, a))
+# print(result)
+
+# ------------------------------------------------------------------------
+
+# 22. Write a Python program that sum the length of the names of a given
+# list of names after removing the names that starts with an lowercase
+# letter. Use lambda function. Go to the editor
+# Result:
+# 16
+#
+# sample_names = ['sally', 'Dylan', 'rebecca', 'Diana', 'Joanne', 'keith']
+# result_names = list(filter(lambda x : x[0].isupper() and x[1].islower(),
+#                            sample_names))
+# print(len(''.join(result_names)))
+
+# ------------------------------------------------------------------------
+#
+# 23. Write a Python program to calculate the sum of the positive and negative
+# numbers of a given list of numbers using lambda function
+# Original list: [2, 4, -6, -9, 11, -12, 14, -5, 17]
+# Sum of the positive numbers: -32
+# Sum of the negative numbers: 48
+#
+# a = [2, 4, -6, -9, 11, -12, 14, -5, 17]
+#
+# positive = list(filter(lambda x : x > 0, a))
+# negative = list(filter(lambda x : x < 0, a))
+#
+# print(f"Positive: {sum(positive)}")
+# print(f"Positive: {sum(negative)}")
+
+# 24. Write a Python program to find numbers within a given range where every
+# number is divisible by every digit it contains. Go to the editor
+# Sample Output:
+# [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 15, 22]
+
+a = [x for x in range(1, 23)]
+b = [x for x in range(1, 23)]
+
+for item in a:
+    length = (len(str(item)))
+    item_listed = list(map(int, str(item)))
+    for i in range(length):
+        if item_listed[i] == 0 or item % item_listed[i] != 0:
+            b.remove(item)
+            break
+print(b)
