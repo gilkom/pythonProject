@@ -179,3 +179,21 @@
 #           'white':'#FFFFFF'}
 #
 # print(dict(sorted(color_dict.items())))
+
+# --------------------------------------------------------------------
+
+# 15. Write a Python program to get the maximum and minimum value in a
+# dictionary.
+
+# diction = {'a': 4, 'b': 7, 'c': 1, 'd': 15}
+#
+# print(max(diction.values()))
+# print(min(diction.values()))
+
+diction = {'a': 4, 'b': 7, 'c': 1, 'd': 15}
+
+max_val = max(diction.keys(), key = (lambda k : diction[k]))
+min_val = min(diction.keys(), key = (lambda k : diction[k]))
+
+print(diction[max_val])
+print(diction[min_val])
